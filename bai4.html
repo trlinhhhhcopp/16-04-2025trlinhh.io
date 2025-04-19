@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In ra các số chẵn từ 0 đến 10</title>
+  <script>
+    function inSoChan() {
+      let result = "";
+      for (let i = 0; i <= 10; i++) {
+        if (i % 2 === 0) {
+          result += i + " ";
+        }
+      }
+      alert("Các số chẵn từ 0 đến 10: " + result);
+    }
+  </script>
+</head>
+<body>
+
+  <h2>In ra các số chẵn từ 0 đến 10</h2>
+  
+  <button onclick="inSoChan()">In ra các số chẵn</button>
+
+</body>
+</html>

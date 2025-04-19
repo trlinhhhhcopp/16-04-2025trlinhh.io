@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính tổng các số chẵn từ 0 đến 20</title>
+  <script>
+    function tinhTongSoChan() {
+      let tong = 0;
+      for (let i = 0; i <= 20; i++) {
+        if (i % 2 === 0) {
+          tong += i;
+        }
+      }
+      alert("Tổng các số chẵn từ 0 đến 20 là: " + tong);
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Tính tổng các số chẵn từ 0 đến 20</h2>
+  
+  <button onclick="tinhTongSoChan()">Tính tổng</button>
+
+</body>
+</html>

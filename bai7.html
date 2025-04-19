@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thao tác với mảng</title>
+  <script>
+    function xuLyMang() {
+      // Nhập mảng từ người dùng
+      let input = document.getElementById("mang").value;
+      let mang = input.split(",").map(Number);  // Chuyển đổi thành mảng số
+
+      // Kiểm tra xem mảng có hợp lệ không (có chứa số)
+      if (mang.some(isNaN)) {
+        alert("Vui lòng nhập các số hợp lệ, phân cách bằng dấu ','");
+        return;
+      }
+
+      // a. Xuất các giá trị trong mảng
+      alert("Mảng ban đầu: " + mang.join(", "));
+
+      // b. Đảo ngược mảng và in ra mảng sau khi đảo ngược
+      let mangDaoNguoc = [...mang].reverse();
+      alert("Mảng sau khi đảo ngược: " + mangDaoNguoc.join(", "));
+
+      // c. Sắp xếp mảng tăng dần
+      let mangSapXep = [...mang].sort((a, b) => a - b);
+      alert("Mảng sau khi sắp xếp tăng dần: " + mangSapXep.join(", "));
+
+      // d. Tìm tổng các phần tử chẵn trong mảng
+      let tongChan = mang.filter(num => num % 2 === 0).reduce((acc, num) => acc + num, 0);
+      alert("Tổng các phần tử chẵn trong mảng: " + tongChan);
+
+      // e. Nhập 1 phần tử bất kỳ và kiểm tra xem phần tử đó có trong mảng không
+      let phanTu = parseInt(prompt("Nhập một phần tử để kiểm tra có trong mảng không:"));
+      let viTri = mang.indexOf(phanTu);
+      if (viTri !== -1) {
+        alert("Phần tử " + phanTu + " có trong mảng, vị trí: " + viTri);
+      } else {
+        alert("Phần tử " + phanTu + " không có trong mảng.");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Thao tác với mảng</h2>
+  
+  <label for="mang">Nhập mảng (các giá trị cách nhau bằng dấu ','):</label>
+  <input type="text" id="mang" placeholder="Ví dụ: 1, 2, 3, 4, 5" /><br><br>
+  
+  <button onclick="xuLyMang()">Thực hiện thao tác với mảng</button>
+
+</body>
+</html>

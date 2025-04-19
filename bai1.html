@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xếp loại</title>
+  </head>
+  <body>
+    <h2>Nhập điểm trung bình:</h2>
+    <input id="diem" type="text" />
+    <button onclick="kiemTra()">Xếp loại</button>
+    <p id="ketqua"></p>
+    <script>
+      function kiemTra() {
+        var diem = document.getElementById("diem").value;
+        diem = parseFloat(diem);
+
+        var loai = "";
+
+        if (diem >= 9 && diem <= 10) {
+          loai = "Xuất sắc";
+        } else if (diem >= 7 && diem < 9) {
+          loai = "Khá";
+        } else if (diem >= 5 && diem < 7) {
+          loai = "Trung bình";
+        } else if (diem >= 0 && diem < 5) {
+          loai = "Yếu";
+        } else {
+          loai = "Vui lòng nhập điểm từ 0 đến 10.";
+        }
+
+        document.getElementById("ketqua").innerText = "Xếp loại: " + loai;
+      }
+    </script>
+  </body>
+</html>

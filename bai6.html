@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính giai thừa</title>
+  <script>
+    function tinhGiaiThua() {
+      // Lấy giá trị nhập vào từ ô input
+      let n = parseInt(document.getElementById("n").value);
+
+      // Kiểm tra xem giá trị nhập vào có phải là số nguyên dương không
+      if (isNaN(n) || n <= 0) {
+        alert("Vui lòng nhập một số nguyên dương.");
+        return;
+      }
+
+      // Tính giai thừa
+      let giaiThua = 1;
+      for (let i = 1; i <= n; i++) {
+        giaiThua *= i;
+      }
+
+      // Hiển thị kết quả
+      alert("Giai thừa của " + n + " là: " + giaiThua);
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Tính giai thừa của một số nguyên dương</h2>
+  
+  <label for="n">Nhập số nguyên dương:</label>
+  <input type="number" id="n" placeholder="Nhập n" /><br><br>
+  
+  <button onclick="tinhGiaiThua()">Tính giai thừa</button>
+
+</body>
+</html>
